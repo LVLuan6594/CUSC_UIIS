@@ -1,17 +1,3 @@
-// Block review code
-document.addEventListener('contextmenu', function (e) {
-  e.preventDefault();
-});
-document.addEventListener('keydown', function (e) {
-  if (
-    e.key === 'F12' ||
-    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-    (e.ctrlKey && e.key === 'U')
-  ) {
-    e.preventDefault();
-  }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   // ===================================
   // INITIALIZE AOS ANIMATIONS
@@ -536,10 +522,15 @@ function initDashboardCharts() {
     new Chart(revenueCtx, {
       type: "pie",
       data: {
-        labels: ["Phí học kỳ", "Phí học lại", "Phí nợ", "Khác"],
+        labels: [
+          "Đúng ngành đào tạo",
+          "Liên quan đến ngành đào tạo",
+          "Không liên quan đến ngành đào tạo",
+          "Tiếp tục học cao học"
+        ],
         datasets: [
           {
-            data: [140503200, 195524950, 87643700, 1515813675],
+            data: [44.10, 30.90, 17.50, 7.50],
             backgroundColor: ["#2563EB", "#10B981", "#FF6B6B", "#F59E0B"],
             borderWidth: 0,
           },
@@ -553,7 +544,7 @@ function initDashboardCharts() {
             position: "bottom",
             labels: {
               font: {
-                family: "'Montserrat', sans-serif",
+                family: "'Roboto', sans-serif",
                 size: 12,
               },
               padding: 20,
@@ -561,9 +552,9 @@ function initDashboardCharts() {
           },
           title: {
             display: true,
-            text: "Tổng các khoản đã thu trong HKII (2024-2025)",
+            text: "Thống kê việc làm của sinh viên sau tốt nghiệp",
             font: {
-              family: "'Montserrat', sans-serif",
+              family: "'Roboto', sans-serif",
               size: 16,
               weight: "bold",
             },
@@ -574,23 +565,25 @@ function initDashboardCharts() {
           datalabels: {
             color: "#fff",
             font: {
-              family: "'Montserrat', sans-serif",
-              size: 13,
+              family: "'Roboto', sans-serif",
+              size: 12,
               weight: "bold",
             },
             formatter: (value, context) => {
-              const data = context.chart.data.datasets[0].data;
-              const total = data.reduce((a, b) => a + b, 0);
-              const percent = ((value / total) * 100).toFixed(1);
-              return percent + "%";
+              // Hiển thị phần trăm với dấu phẩy (ví dụ: 44,10%)
+              return value.toLocaleString('vi-VN', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%";
             },
           },
           tooltip: {
             callbacks: {
               label: function (context) {
+                // Tooltip chỉ hiển thị phần trăm
                 const label = context.label || "";
                 const value = context.parsed || 0;
-                return value.toLocaleString("vi-VN") + " VNĐ";
+                return `${value.toLocaleString("vi-VN", {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}%`;
               },
             },
           },
@@ -607,23 +600,22 @@ function initDashboardCharts() {
       type: "bar",
       data: {
         labels: [
-          "Chính trị",
-          "Sư phạm",
-          "Thủy sản",
-          "Công nghệ",
-          "CNTT&TT",
-          "Nông nghiệp",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
         ],
         datasets: [
           {
-            label: "Nhập học",
-            data: [177, 347, 220, 205, 362, 315],
+            label: "Tuyển sinh",
+            data: [10185, 7261, 6726, 7143, 9261],
             backgroundColor: "#2563EB",
             borderWidth: 0,
           },
           {
             label: "Tốt nghiệp",
-            data: [86, 203, 287, 121, 217, 204],
+            data: [6593, 6289, 7469, 7610, 8843],
             backgroundColor: "#10B981",
             borderWidth: 0,
           },
@@ -637,7 +629,7 @@ function initDashboardCharts() {
             position: "bottom",
             labels: {
               font: {
-                family: "'Montserrat', sans-serif",
+                family: "'Roboto', sans-serif",
                 size: 12,
               },
               padding: 20,
@@ -645,9 +637,9 @@ function initDashboardCharts() {
           },
           title: {
             display: true,
-            text: "Tình hình nhập học - tốt nghiệp trong những năm gần đây",
+            text: "Số lượng sinh viên chính quy qua các năm",
             font: {
-              family: "'Montserrat', sans-serif",
+              family: "'Roboto', sans-serif",
               size: 16,
               weight: "bold",
             },
@@ -660,11 +652,14 @@ function initDashboardCharts() {
             align: "top",
             color: "#222",
             font: {
-              family: "'Montserrat', sans-serif",
+              family: "'Roboto', sans-serif",
               weight: "bold",
-              size: 13,
+              size: 10,
             },
-            formatter: (value) => value,
+            formatter: (value) => {
+              // Hiển thị số có dấu chấm phân tách hàng nghìn
+              return value.toLocaleString('vi-VN');
+            },
           },
         },
         scales: {
@@ -674,7 +669,7 @@ function initDashboardCharts() {
             },
             ticks: {
               font: {
-                family: "'Montserrat', sans-serif",
+                family: "'Roboto', sans-serif",
                 size: 11,
               },
             },
@@ -685,8 +680,12 @@ function initDashboardCharts() {
             },
             ticks: {
               font: {
-                family: "'Montserrat', sans-serif",
+                family: "'Roboto', sans-serif",
                 size: 11,
+              },
+              callback: function (value) {
+                // Hiển thị số với dấu chấm phân tách hàng nghìn
+                return value.toLocaleString('vi-VN');
               },
             },
           },

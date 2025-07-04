@@ -679,7 +679,7 @@ p {
 
 .chart-container {
   position: relative;
-  height: 300px;
+  height: 350px;
   width: 100%;
 }
 
@@ -941,14 +941,68 @@ p {
   margin-bottom: 1rem;
 }
 
-.achievement-card-horizontal img {
-  cursor: pointer;
-}
-
 .achievement-card h5 {
   color: var(--gray-800);
   font-size: 1rem;
   margin: 0;
+}
+
+/* ACHIEVEMENT CARD HIGHLIGHT (ƯU TIÊN MUA SẮM) */
+.achievement-card-highlight {
+  background: var(--accent-color);
+  color: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.15);
+  border: none;
+  min-height: 90px;
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.achievement-icon-check {
+  background: rgba(255,255,255,0.18);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 2.2rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-title {
+  font-size: 1.15rem;
+  color: var(--white);
+}
+
+.achievement-desc {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.8;
+}
+
+.btn-detail-link {
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.btn-detail-link:hover, .btn-detail-link:focus {
+  background: var(--white);
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 /* ===================================
@@ -1469,15 +1523,27 @@ p {
   }
 
   .chart-container {
-    height: 250px;
+    height: 300px;
   }
 
   .achievement-card {
     padding: 1rem 4rem;
   }
-
-  .achievement-card-horizontal {
-    padding: 1rem;
+  .achievement-card-highlight {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1.2rem 1rem;
+  }
+  .btn-detail-link {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .achievement-title {
+    font-size: 1rem;
+  }
+  .achievement-desc {
+    font-size: 0.95rem;
   }
 
   .client-logo {
@@ -1557,12 +1623,17 @@ p {
     font-size: 1.25rem;
   }
 
-  .chart-container {
-    height: 200px;
-  }
-
   .dashboard-charts {
     padding: 15px;
+  }
+  
+  .achievement-card-highlight {
+    padding: 1rem 0.5rem;
+  }
+  .achievement-icon-check {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
   }
 
   .client-logo {
