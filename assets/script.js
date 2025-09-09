@@ -12,13 +12,6 @@ document.addEventListener('keydown', function (e) {
   }
 });
 document.addEventListener("DOMContentLoaded", () => {
-  // ===================================
-  // INITIALIZE AOS ANIMATIONS
-  // ===================================
-
-  // ===================================
-  // NAVBAR SCROLL EFFECTS
-  // ===================================
   const navbar = document.getElementById("mainNavbar");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -57,9 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     highlightActiveNavLink();
   });
 
-  // ===================================
-  // SMOOTH SCROLLING FOR NAV LINKS
-  // ===================================
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();

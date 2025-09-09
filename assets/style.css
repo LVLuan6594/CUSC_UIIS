@@ -41,6 +41,29 @@
   /* Number of client logos in .clients-section */
   --number-of-client-logos: 24;
 }
+.hero-section {
+    margin-top: 80px; /* tạo khoảng cách với header */
+    background: linear-gradient(to bottom right, #eaf4ff, #ffffff);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #004aad;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #1a8b3a;
+    font-weight: 500;
+}
+
+.hero-description {
+    font-size: 1rem;
+    color: #333;
+    max-width: 90%;
+}
 
 * {
   margin: 0;
