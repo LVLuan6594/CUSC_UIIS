@@ -1657,115 +1657,46 @@ p {
 }
 
 @media (max-width: 576px) {
-  .floating-icon {
-    display: none;
-  }
-
-  .hero-container {
-    padding: 0.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
-
-  .dashboard-charts {
-    padding: 15px;
-  }
-
-  .achievement-card-highlight {
-    padding: 1rem 0.5rem;
-  }
-  .achievement-icon-check {
-    width: 40px;
-    height: 40px;
-    font-size: 1.4rem;
-  }
-
-  .client-logo {
-    flex: 0 0 120px;
-  }
-
-  .clients-track {
-    width: calc(120px * var(--number-of-client-logos));
-  }
-
-  .consultant-card {
-    padding: 1rem;
-  }
-
-  .consultant-header h6 {
-    font-size: 1rem;
-  }
-
-  .consultant-badge {
-    font-size: 0.8rem;
-  }
-
-  .contact-link {
-    padding: 0.4rem;
-  }
-
-  .contact-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  .contact-label {
-    font-size: 0.75rem;
-  }
-
-  .contact-value {
-    font-size: 0.9rem;
-  }
-
-  .qr-wrapper {
-    width: 100px;
-    height: 100px;
-  }
-
-  .consultant-card {
-    padding: 0.7rem 0.4rem 0.5rem 0.4rem;
-  }
-  .consultant-avatar img {
-    width: 88px;
-    height: 88px;
-  }
-  .qr-img {
-    width: 120px;
-    height: 120px;
-  }
-  .consultant-info {
-    padding: 0;
-    text-align: center;
-    margin-bottom: 0.3rem;
-  }
-  .consultant-contacts {
-    align-items: center;
-  }
-  .contact-link {
-    width: 100%;
-    justify-content: center;
-    font-size: 1.1rem;
+  .consultant-card .row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 0.5rem;
   }
   .consultant-avatar,
   .consultant-info,
   .consultant-qr {
-    margin-bottom: 0.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0.5rem !important;
+    padding: 0 !important;
   }
-  .row > .consultant-avatar {
-    order: 1;
+  .consultant-avatar img,
+  .qr-img {
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 auto !important;
   }
-  .row > .consultant-info {
-    order: 2;
+  .consultant-name {
+    font-size: 1rem !important;
   }
-  .row > .consultant-qr {
-    order: 3;
-    margin-top: 0.2rem;
+  .consultant-title {
+    font-size: 0.95rem !important;
+  }
+  .consultant-contacts {
+    gap: 0.1rem !important;
+  }
+  .contact-link {
+    font-size: 0.95rem !important;
+    padding: 0.2rem 0.5rem !important;
+    width: 100%;
+    justify-content: center;
+  }
+  .qr-label {
+    font-size: 0.85rem !important;
+  }
+  .modal-content.contact-modal {
+    padding: 0.5rem !important;
   }
 }
 
