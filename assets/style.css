@@ -42,27 +42,27 @@
   --number-of-client-logos: 24;
 }
 .hero-section {
-    margin-top: 80px; /* tạo khoảng cách với header */
-    background: linear-gradient(to bottom right, #eaf4ff, #ffffff);
+  margin-top: 80px; /* tạo khoảng cách với header */
+  background: linear-gradient(to bottom right, #eaf4ff, #ffffff);
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #004aad;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #004aad;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: #1a8b3a;
-    font-weight: 500;
+  font-size: 1.25rem;
+  color: #1a8b3a;
+  font-weight: 500;
 }
 
 .hero-description {
-    font-size: 1rem;
-    color: #333;
-    max-width: 90%;
+  font-size: 1rem;
+  color: #333;
+  max-width: 90%;
 }
 
 * {
@@ -270,6 +270,32 @@ p {
 
 .navbar-toggler:focus {
   box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-toggler {
+    display: block !important;
+    z-index: 1001;
+  }
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    width: 100vw;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0.5rem;
+    z-index: 1000;
+  }
+  .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+  }
+  .navbar .container {
+    position: relative;
+  }
 }
 
 /* ===================================
@@ -987,7 +1013,7 @@ p {
 }
 
 .achievement-icon-check {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.18);
   border-radius: 50%;
   width: 56px;
   height: 56px;
@@ -1010,19 +1036,20 @@ p {
 }
 
 .btn-detail-link {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   color: var(--white);
   font-weight: 600;
   border-radius: 8px;
   padding: 0.6rem 1.2rem;
   border: none;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
   font-size: 1rem;
   text-decoration: none;
 }
 
-.btn-detail-link:hover, .btn-detail-link:focus {
+.btn-detail-link:hover,
+.btn-detail-link:focus {
   background: var(--white);
   color: var(--accent-color);
   text-decoration: none;
@@ -1649,7 +1676,7 @@ p {
   .dashboard-charts {
     padding: 15px;
   }
-  
+
   .achievement-card-highlight {
     padding: 1rem 0.5rem;
   }
@@ -1742,6 +1769,207 @@ p {
   }
 }
 
+/* =========================
+   BỔ SUNG RESPONSIVE CHO MOBILE & TABLET
+   ========================= */
+
+/* Điều chỉnh padding cho section trên mobile */
+@media (max-width: 480px) {
+  .hero-section,
+  .about-section,
+  .model-section,
+  .features-section,
+  .benefits-section,
+  .trust-section,
+  .news-section,
+  .clients-section,
+  .security-support-section {
+    padding: 1.2rem 0 !important;
+  }
+  .section-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .hero-title {
+    font-size: 1.3rem !important;
+  }
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  .hero-description {
+    font-size: 0.95rem !important;
+    max-width: 100%;
+  }
+  .stat-number {
+    font-size: 1.5rem !important;
+  }
+  .stat-label {
+    font-size: 0.95rem !important;
+  }
+  .feature-card,
+  .benefit-card,
+  .trust-card {
+    padding: 1rem 0.5rem !important;
+    font-size: 0.98rem;
+  }
+  .feature-icon-lg,
+  .trust-icon,
+  .benefit-icon {
+    font-size: 2rem !important;
+  }
+  .achievement-card img,
+  .achievement-card {
+    max-width: 100%;
+    height: auto !important;
+    padding: 0.5rem !important;
+  }
+  .achievement-card-highlight {
+    flex-direction: column !important;
+    padding: 0.7rem 0.3rem !important;
+    font-size: 0.95rem;
+  }
+  .clients-carousel {
+    padding: 0.5rem 0 !important;
+  }
+  .client-logo {
+    flex: 0 0 90px !important;
+    padding: 0.3rem !important;
+  }
+  .clients-track {
+    width: calc(90px * var(--number-of-client-logos)) !important;
+    min-width: unset !important;
+  }
+  .modal-content {
+    padding: 0.5rem !important;
+  }
+  .consultant-avatar img,
+  .qr-img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .consultant-name {
+    font-size: 1rem !important;
+  }
+  .consultant-title {
+    font-size: 0.95rem !important;
+  }
+  .contact-link {
+    font-size: 0.98rem !important;
+  }
+  .footer {
+    padding: 1rem 0 !important;
+  }
+  .footer-heading {
+    font-size: 1rem !important;
+  }
+  .footer-stats,
+  .footer-contact-info,
+  .stat-item,
+  .contact-item,
+  .footer .copyright {
+    font-size: 12px !important;
+  }
+  .footer .footer-brand p {
+    font-size: 14px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.3 !important;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .footer .footer-brand img {
+    width: 120px !important;
+    height: auto !important;
+  }
+  .footer .social-link img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+/* Điều chỉnh layout cho tablet */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: unset;
+    padding-top: 90px;
+  }
+  .hero-container {
+    flex-direction: column;
+    padding: 0.5rem !important;
+  }
+  .hero-image {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .model-display {
+    min-height: 260px !important;
+    padding: 0.5rem !important;
+  }
+  .model-content {
+    padding: 0.5rem !important;
+  }
+  .dashboard-charts {
+    padding: 10px !important;
+  }
+  .chart-container {
+    height: 180px !important;
+  }
+  .news-video-wrapper iframe {
+    min-height: 180px !important;
+    height: 180px !important;
+  }
+  .achievement-card img {
+    height: 120px !important;
+    width: 100% !important;
+    object-fit: contain;
+  }
+}
+
+/* Điều chỉnh cho laptop nhỏ */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .feature-card,
+  .benefit-card,
+  .trust-card {
+    font-size: 1rem;
+  }
+  .clients-track {
+    width: calc(120px * var(--number-of-client-logos));
+  }
+  .client-logo {
+    flex: 0 0 120px;
+  }
+}
+
+/* Ẩn một số hình ảnh lớn trên mobile nếu cần */
+@media (max-width: 480px) {
+  .about-section img,
+  .model-content img {
+    display: none !important;
+  }
+}
+
+/* Đảm bảo các hàng không bị tràn chiều ngang */
+.row {
+  flex-wrap: wrap;
+}
+
+/* Đảm bảo các bảng, biểu đồ không bị tràn */
+.dashboard-charts,
+.chart-container,
+.news-video-wrapper {
+  max-width: 100vw !important;
+  overflow-x: auto;
+}
+
 /* ===================================
      ANIMATIONS & UTILITIES
      ================================= */
@@ -1827,5 +2055,88 @@ html {
 
   * {
     box-shadow: none !important;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.footer,
+.clients-section,
+.clients-carousel,
+.clients-track,
+.row {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  margin-right: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .clients-track {
+    width: calc(90px * var(--number-of-client-logos)) !important;
+    min-width: unset !important;
+  }
+  .client-logo {
+    min-width: 0 !important;
+    max-width: 100vw !important;
+  }
+  .footer {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* Responsive images: luôn co giãn đúng tỉ lệ, không bị méo, rõ nét */
+img,
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+  display: block;
+}
+
+/* Đảm bảo hình ảnh trong các card, carousel, modal, ... không bị tràn hoặc méo */
+.achievement-card img,
+.model-content img,
+.feature-card img,
+.benefit-card img,
+.trust-card img,
+.client-logo img,
+.consultant-avatar img,
+.qr-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Đảm bảo hình ảnh lớn ở hero section co giãn hợp lý trên mobile */
+@media (max-width: 768px) {
+  .hero-image {
+    width: 100% !important;
+    max-width: 350px !important;
+    height: auto !important;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+/* Đảm bảo hình ảnh không bị ẩn hoàn toàn trên mobile nếu cần hiển thị */
+@media (max-width: 480px) {
+  .about-section img,
+  .model-content img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
   }
 }
