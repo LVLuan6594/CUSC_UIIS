@@ -1199,6 +1199,12 @@ p {
 }
 
 .footer-logo {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+.footer-logo {
   height: 112px;
   width: 160px;
   padding: 8px;
@@ -2069,5 +2075,32 @@ img,
     max-width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
+  }
+}
+
+/* Footer layout 6-3-3, căn giữa trên mobile */
+@media (max-width: 991.98px) {
+  .footer .row.align-items-start {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem;
+  }
+  .footer .footer-brand,
+  .footer .footer-contact-info,
+  .footer .footer-stats,
+  .footer .footer-heading {
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .footer .footer-stats {
+    min-width: unset !important;
+  }
+  .footer .footer-logo {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
