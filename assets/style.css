@@ -233,6 +233,8 @@ p {
   height: 70px;
   width: 100px;
   transition: all var(--transition-normal);
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .navbar-nav .nav-link {
@@ -296,6 +298,13 @@ p {
   .navbar .container {
     position: relative;
   }
+}
+/* img chuyen gia tu van */
+.consultant-photo {
+  width: 120px;      /* chỉnh kích thước mong muốn */
+  height: 120px;     /* phải bằng width để thành vuông */
+  object-fit: cover; /* cắt ảnh để không méo */
+  border-radius: 50%; /* bo tròn tuyệt đối */
 }
 
 /* ===================================
@@ -1199,17 +1208,13 @@ p {
 }
 
 .footer-logo {
-  width: 160px;
-  height: auto;
   display: block;
 }
 
 .footer-logo {
-  height: 112px;
-  width: 160px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -1818,6 +1823,8 @@ p {
   .footer .footer-brand img {
     width: 120px !important;
     height: auto !important;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
   .footer .social-link img {
     width: 24px !important;
